@@ -1,0 +1,6 @@
+{
+  "name": "@innoagency-arenda/utils",
+  "version": "1.2.0",
+  "private": true,
+  "main": "./src/index.js"
+}

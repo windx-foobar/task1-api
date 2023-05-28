@@ -1,0 +1,12 @@
+.idea/*
+!.idea/codeStyles
+!.idea/prettier.xml
+
+.output
+
+node_modules
+dist
+.env
+uploads
+
+yarn-error.log

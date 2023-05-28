@@ -1,0 +1,10 @@
+{
+  "name": "@innoagency-arenda/dotenv",
+  "version": "1.2.0",
+  "private": true,
+  "main": "./src/index.js",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "dotenv-parse-variables": "^2.0.0"
+  }
+}

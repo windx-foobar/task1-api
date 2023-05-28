@@ -1,0 +1,40 @@
+image: node:14.20.0
+
+variables:
+  REMOTE_PATH: /var/www/task1
+cache:
+  key: '$CI_JOB_NAME-$CI_COMMIT_REF_SLUG'
+  paths:
+    - node_modules/
+
+stages:
+  - production
+
+# production
+production:
+  stage: production
+  variables:
+    GIT_STRATEGY: none
+    LOG_LEVEL: debug
+    PROJECT_PATH: $REMOTE_PATH/$CI_PROJECT_NAME
+  before_script:
+    - (if [[ -d $PROJECT_PATH ]]; then cd $PROJECT_PATH; git remote set-url origin $CI_REPOSITORY_URL; git pull origin $CI_BUILD_REF_NAME; else cd $REMOTE_PATH; git clone $CI_REPOSITORY_URL; fi;)
+  script:
+    - export NVM_DIR="$HOME/.nvm"
+    - '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
+    - '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'
+    - cd $PROJECT_PATH;
+    - yarn install;
+    - NODE_ENV=production yarn build:api;
+    - NODE_ENV=production pm2 startOrReload ecosystem.config.js --update-env && pm2 save
+    # - git rev-parse --short HEAD > ./static/hash.html
+    # - cat ./static/hash.html
+
+  # environment:
+  # name: test/$CI_BUILD_REF_NAME
+  # action: stop
+  # when: manual
+  only:
+    - master
+  tags:
+    - nirn2

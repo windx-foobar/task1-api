@@ -1,0 +1,34 @@
+{
+  "name": "api",
+  "version": "1.2.0",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf dist && NODE_ENV=production babel . --out-dir dist --config-file ./babel.config.js",
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "start": "NODE_ENV=production node dist/index.js",
+    "cli-dev": "babel-node cli/cli.js",
+    "cli": "NODE_ENV=production node dist/cli/cli.js"
+  },
+  "dependencies": {
+    "lodash": "4.17.21",
+    "mri": "1.2.0",
+    "execa": "7.1.1",
+    "dayjs": "^1.11.7",
+    "passport": "0.6.0",
+    "passport-local": "1.0.0",
+    "passport-headerapikey": "1.2.2",
+    "@faker-js/faker": "7.6.0",
+    "multer": "1.4.5-lts.1",
+    "cyrillic-to-translit-js": "3.2.1",
+    "content-disposition": "0.5.4",
+    "sharp": "0.32.1"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.20.7",
+    "@babel/core": "^7.21.8",
+    "@babel/cli": "^7.21.5",
+    "@babel/preset-env": "^7.21.5",
+    "nodemon": "^2.0.22",
+    "babel-plugin-module-resolver": "^4.1.0"
+  }
+}

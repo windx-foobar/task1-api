@@ -1,0 +1,29 @@
+{
+  "name": "innoagency-arenda",
+  "version": "1.2.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "api",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "changelogen": "0.5.3",
+    "cross-env": "^7.0.3",
+    "fast-glob": "3.2.12",
+    "prettier": "2.8.8"
+  },
+  "scripts": {
+    "dev:api": "yarn  --cwd api dev",
+    "build:api": "yarn  --cwd api build",
+    "start:api": "yarn --cwd api start",
+    "cli:api": "yarn --cwd api cli",
+    "cli-dev:api": "yarn --cwd api cli-dev",
+    "release": "changelogen --release"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  }
+}

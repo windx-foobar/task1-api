@@ -1,0 +1,10 @@
+{
+  "delay": 0,
+  "execMap": {
+    "js": "babel-node"
+  },
+  "watch": ["app", "config", "routes", "../.env", "index.js"],
+  "_events": {
+    "start": "node -e \"process.stdout.write('\\033c');\""
+  }
+}

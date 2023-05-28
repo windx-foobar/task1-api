@@ -1,0 +1,9 @@
+{
+  "name": "@innoagency-arenda/docs",
+  "version": "1.2.0",
+  "private": true,
+  "main": "./src/index.js",
+  "dependencies": {
+    "exceljs": "4.3.0"
+  }
+}

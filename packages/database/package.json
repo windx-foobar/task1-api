@@ -1,0 +1,14 @@
+{
+  "name": "@innoagency-arenda/database",
+  "version": "1.2.0",
+  "private": true,
+  "main": "./src/index.js",
+  "dependencies": {
+    "sequelize": "6.31.1",
+    "pg": "8.11.0",
+    "pg-hstore": "2.3.4",
+    "lodash": "4.17.21",
+    "umzug": "3.2.1",
+    "fast-glob": "3.2.12"
+  }
+}
